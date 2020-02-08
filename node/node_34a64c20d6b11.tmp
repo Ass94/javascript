@@ -1,0 +1,6 @@
+const schedule = require('node-schedule')
+
+// Executar de 5 em 5 segundos às 12h ignorando mês e semana na terça-feira.
+const tarefa1 = schedule.scheduleJob('*/5 * 12 * * 2', function () {
+    console.log('Excecutando Tarefa 1!', new Date().getSeconds())
+})
