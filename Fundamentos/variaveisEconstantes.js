@@ -1,7 +1,11 @@
 /* Ulizar let para declaração de variáveis
  * const -> Constante.
 */
-var a = 3
+/*
+    var: Escopo global e de função.
+    let: Escopo de bloco.
+*/
+var a = 3 
 let b = 4
 
  console.log(a, b)
