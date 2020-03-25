@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <!--Ordem de processamento de estilo: -->
+     <!-- inline (está direto na tag - não é boa prática) os demais seguem a ordem de processamento -->
+    <style>
+        /*Seletor do tipo elemento*/
+        body {
+            background-color: aquamarine;
+        }
+    </style>
+    <!--rel quer dizer relação-->
+    <link rel="stylesheet" href="css/externo.css">
+</head>
+<!--Propriedade inline-->
+<body style="background-color: coral;">
+    <h1>E agora?</h1>
+</body>
+
+</html>
