@@ -11,11 +11,77 @@
             margin: 0;
         }
 
+        html {
+            font-size: 28px;
+        }
+
+        div {
+            font-size: 50px;
+        }
+
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
+        p {
+            /*Valores padrões*/
+            /*Todos abaixo são equivalentes*/
+            font-size: 1em; /*Uma vez o tamnho padrão*/
+            font-size: 100%; /*Tbm é um tamanho padrão*/
+            font-size: 16px; /*Tamanho padrão do navegador*/
+            font-size: 12pt; /*Tbm tamanho padrão*/
+
+            /*Unidades absolutas*/
+            font-size: 100px; /*Tamanho do pixel é relativo*/
+            font-size: 72pt; /*Pontos (Equivalente a uma polegada)*/
+            font-size: 1in; /*polegada*/
+
+            /*Unidades relativas*/
+
+            font-size: 2.2em; /*Duas vezes o tamanho padrão mais próximo*/
+            font-size: 2.2rem; /*Duas vezes a referência do HTML (a referência maior)*/
+            font-size: 50vh; /*Baseada no viewport*/
+            font-size: 10vw; /*10% da largura para obter o tamanho da fonte*/
+
+            font-family: monospace; /*Monoespaçada. Todas letras utilizam o mesmo espaço*/
+            font-family: Georgia, serif; /*Fonte: Georgia, caso não encontra, utilizar: serif*/
+            font-family: Verdana, sans-serif; /*Fonte não serifada*/
+            font-family: 'Indie Flower', cursive; /*Fonte cursiva. Precisa importar a fonte conforme link dentro do <head>*/
+
+            font-weight: 900; /*Peso da fonte (negrito)*/
+            font-weight: bold; /*Peso da fonte com valores pré-definidos*/
+            font-style: italic; /*Estilo da fonte: intálico*/
+            text-transform: uppercase; /*Letras maiúsculas*/
+            text-transform: capitalize; /*Primeira letra maiúscula*/
+            text-decoration: overline underline line-through; /*Linha em baixo, linha em cima, linha no meio*/
+            word-spacing: 10px; /*Separação entre as palavras*/
+            letter-spacing: 20px; /*Separação entre as letras*/
+            line-height: 2.5em; /*Altura da linha*/
+            text-align: center;/*Centraliza o texto*/
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none; /*Retira a linha que fica embaixo da linha*/
+            padding: 10px 30px; /*10px na vertical 30px na horizontal*/
+            border-radius: 25px;/*Borda arredondada de raio: 25px*/
+        }
+
+        .destaque {
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000; /*Sombra, efeito 3D*/
+        }
+
+        /*Pseudo classe active*/
+        /*Aqui temos uma especificidade maior*/
+        .destaque:active {
+            /*Quando o link estiver ativo, aplicar o que está dentro desta classe css*/
+            box-shadow: none; /*Retira o sombreamento*/
+        }
+
     </style>
 </head>
 
@@ -26,7 +92,9 @@
             <br>legal!!!
         </p>
     </div>
+    <!-- botao e destaque (refere-se a duas classes de CSS) -->
     <a href="http://google.com" class="botao destaque">Google</a>
+    
 </body>
 
 </html>

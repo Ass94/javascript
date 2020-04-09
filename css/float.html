@@ -5,24 +5,35 @@
     <meta charset="UTF-8">
     <title>Float</title>
     <style>
+        /* No lugar do float é melhor utilizar Flex Box*/
         body {
             background-color: #222;
         }
-
+        
         .c1 {
             background-color: red;
+            float: right;
         }
 
         .c2 {
             background-color: green;
+            clear: right; /*Limpando float rigth - Elemento vai para uma linha depois*/
+            float: left;
         }
         
         .c3 {
             background-color: blue;
+            clear: both; /* limpa ambos */
         }
 
         .c4 {
             background-color: orange;
+            clear: right        
+        }
+
+        div { /* (div) elemento do tipo block*/
+            height: 150px; /* (px) valores absolutos*/
+            width: 150px;
         }
     </style>
 </head>
