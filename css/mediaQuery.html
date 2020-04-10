@@ -12,6 +12,21 @@
             border: solid 5px;
             display: none;
         }
+        /*Trabalhando com responsividade*/
+        @media (max-width: 600px){
+            /*Se a largura do dispositivo for no máximo 600px, aplicar a classe abaixo */
+            .muito-pequeno { display: block; }
+        }
+
+        @media (max-width: 1000px), (orientation: portrait) {
+                .pequeno-retrato { display: block; }
+        }
+
+        /*Menor igual a 500px e maior igual a 1000px*/
+        @media (min-width: 500px) and (max-width: 1000px){
+            .intervalo { display: block; }
+        }
+
     </style>
 </head>
 <body>

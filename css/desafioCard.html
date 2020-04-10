@@ -5,7 +5,52 @@
     <meta charset="UTF-8">
     <title>Desafio Card</title>
     <style>
-        /* ... */
+        .curso {
+            /*float: left; */ /* Utilizado para permitir um card ao lado do outro*/
+            display: inline-block; /*Efeito parecido com float: left*/
+            vertical-align: top; /*Os dois cards sempre ficarão alinhados pelo topo*/
+            font-family: Verdana, sans-serif;
+            border: solid 1px #CCC;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3); /*Sombreamento. Efeito 3D*/
+            height: 300px;
+            width: 260px;
+            margin: 5px 20px; /*5px vertical 20px horizontal*/
+            padding: 5px; /*padding de 5px interno*/
+        }
+
+        .curso img {
+            width: 100%; /*irá se adequar a largura do card*/
+            max-height: 50%; /*Altura máxima de 50%*/
+        }
+
+        .curso-info {
+            padding: 10px;
+            height: 90px;
+            overflow: hidden; /*Tudo que passar de 90px, quero que fique invisível*/
+        }
+
+        .curso-info h4 {
+            font-size: 1.4em;
+            font-weight: 100;
+            margin: 0px;
+        }
+
+        .curso-preco {
+            float: right;
+            padding: 10px;
+        }
+
+        .preco-de {
+            text-decoration: line-through; /*Irá cortar o texto*/
+            color: firebrick;
+        }
+
+        .preco-por {
+            color: green;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
     </style>
 </head>
 

@@ -5,7 +5,71 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+            color: #fff;
+        }
+
+        .static {
+            /*Por ser estático, top e left não será levado em consideração*/
+            top: 100px; 
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed {
+            /*position fixed ficará fixada no local determinado abaixo*/
+            position: fixed;
+            bottom: 30px; /*30px em relação a parte de baixo do viewport (página)*/
+            right: 0px; /*Ficará encostado do lado direito*/
+            background-color: tomato;
+
+        }
+
+        .relative1 {
+            /*Leva em consideração o elemento anterior. No caso a div static*/
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+
+        .absolute1 {
+            /*Ficará posicionado de forma absoluta em relação a página (viewport)*/
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategrey;
+
+        }
+
+        .absolute2 {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            /*A div congela ao chegar no topo da página*/
+            position: sticky;
+            background-color: #777;
+            top: 0px;
+        }
+
     </style>
 </head>
 
