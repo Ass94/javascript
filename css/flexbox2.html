@@ -6,7 +6,55 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40x;
+        }
+
+        .flex-container div {
+            box-sizing: border-box; /*Border box usando a margem*/ 
+        }
+
+        .flex-container {
+            display: flex; /*Por padrão do tipo row, isto é, row será o main axis*/
+            height: 300px;
+            width: 600px;
+        }
+
+        /*Pegar o terceiro , ou seja, a div com o número três*/
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            order: 1; /*Manipular a ordem dos elementos. Por padrão é 0, alterando para 1, esse elemento passa a ser maior e vai para o final*/
+            order: 0; /*Volta a ser exibido na ordem difinida no html*/
+            order: -1; /*Negativo, passa a ser o primeiro a ser exibido, visto que, por padrão os demais elementos possuem ordem 0*/
+            /*Alinhamento específico de acordo com o chid selecionado*/
+            align-self: center;
+            align-self: flex-end; /*Final da coluna*/
+            align-self: flex-start; /*início da coluna*/
+            align-self: stretch; /*Padrão*/
+        }
+
+        /*flex-grow crescer*/
+        .flex-container div {
+            width: 100px;
+            flex-grow: 0; /*Padrão. Não irá mudar nada*/
+            flex-grow: 1; /*Irão crescer de forma igual, pois todos tem o peso 1*/
+        }
+
+        .flex-container div:nth-child(1){
+            flex-grow: 2; /*A div um terá peso dois, logo, irá crescer mais que os demais que possuem peso 1*/
+        }
+
+        /*flex-shrink diminuir*/
+        .flex-container {
+            width: 300px;
+            flex-shrink: 1; /*Peso 1 para todos. Irão diminuir de forma equivalente*/
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5; /*Peso 5 para div 1*/
+        }
+
     </style>
 </head>
 

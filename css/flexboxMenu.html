@@ -54,6 +54,26 @@
         /* ==================== */
         /* Solução com Flex Box */
         /* ==================== */
+
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /*As pontas não tem espaço, mas entre eles tem.*/
+        }
+
+        .menu {
+            /*Irá crescer mais do que os outros*/
+            flex-grow: 10;
+        }
+
+        .menu ul {
+            display: flex;
+            
+        }
+
+        .menu li {
+            margin:  0px 10px;
+        }
     </style>
 </head>
 

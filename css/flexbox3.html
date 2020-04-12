@@ -6,7 +6,34 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex; /*flex-direction row */
+            flex-direction: row; /*Deixando row explícito*/
+        }
+
+        .flex-container div {
+            flex-basis: 100px; /*Dimensão do elemento dentro do flex-container. De acordo com o main axis*/
+            width: 200px; 
+        }
+
+        /* Selecionando a quarta div dentro de flex-container*/
+        .flex-container div:nth-child(4){
+            /*grow shrink basis*/
+            flex: 3 6 100px; /*short curt*/
+        }
+
+        .flex-container {
+            width: 300px;
+            width: 600px;
+        }
+
+
+
     </style>
 </head>
 

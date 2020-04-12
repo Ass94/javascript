@@ -6,7 +6,54 @@
     <title>CSS Grid #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            grid-area: cabecalho;
+        }
+
+        nav {
+            grid-area: navegacao;
+        }
+
+        main {
+            grid-area: conteudo;
+        }
+
+        footer {
+            grid-area: rodape;
+        }
+
+        body {
+            /*Layout da página*/
+            display: grid;
+            min-height: 100vh; /*Altura: viewport inteiro*/
+            grid-template-columns: 300px 1fr; /*1ª coluna 300px; 2ª coluna 1fr (Espaço inteiro da tela)*/
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas: 
+                'cabecalho cabecalho' /*Cabeçalho ocupará 1ª e 2ª colunas*/
+                'navegacao conteudo' /*1ª coluna navegação (Parte west) 2ª coluna conteudo (center)*/
+                'rodape rodape'; /*1ª e 2ª coluna rodapé*/
+        }
+
+        /*Estilização para mobile*/
+        @media (max-width: 700px){
+            body {
+                grid-template-columns: 1fr; /*Uma coluna*/
+                grid-template-rows: 80px 1fr 100px; /*3 linhas, cada uma com o seu devido tamanho*/
+                grid-template-areas: 
+                'navegacao'
+                'conteudo'
+                'rodape';
+            }
+
+            header { display: none; } /*display none quando viewport menhor que 700px*/
+        }
+
+
     </style>
 </head>
 

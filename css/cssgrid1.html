@@ -22,6 +22,53 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        .d8 {
+            /*mescla*/
+            grid-column-start: 2;
+            grid-column-end: 4;
+            /*Equivalente*/
+            grid-column-end: span 2;
+
+            /*mescla*/
+            grid-row-start: 3;
+            grid-row-end: 5;
+            /*Equivalente*/
+            grid-row-end: span 2;
+
+        }
+
+        .d10, 
+        .d11 {
+            /*Podem se sobrepor*/
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: span 1;
+        }
+
+        .d10 {
+            /*Quem terá maior preferência*/
+            z-index: 10; /*Profundidade dos elementos. Como os elementos estrão organizados na página*/
+            
+        }
+
+        body {
+            /*Ativando display grid*/
+            display: grid;
+            grid-template-columns: 50% 50%; /*Qual será a organização das colunas*/
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /*Repetir 4 vezes*/
+            grid-template-columns: repeat(4, 8.33%);
+            grid-template-columns: repeat(11, 100px) 100px;
+            grid-template-columns: 200px 20% 1fr; /*1º coluna: 200px; 2ª coluna: 20%; 3ª coluna: pega os demais espaços (fragmento)*/
+            grid-template-columns: 3fr 6fr 3fr; /*1º coluna: três fragmentos, 2ª coluna: 6fragmentos, 3ª coluna 3fragmentos*/
+            grid-template-rows: 50% 25% 12.5% 12.5%; /*1ª linha 50%, 2ª linha 25% 3ª e 4ª linhas 12.5%*/
+            grid-template-rows: 100px 1fr;
+            grid-template-rows: 100px auto; /*Ou seja, as três linhas restantes serão organizada de forma automática*/
+        }
+
+
+
     </style>
 </head>
 
