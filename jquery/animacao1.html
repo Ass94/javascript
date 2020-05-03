@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Animação #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        div {
+            text-align: center;
+        }
+        button {
+            font-size: 1.8em;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Animação #01</h1>
+    <button>Iniciar</button>
+    <div id='animar'>Animar!</div>
+
+    <script>        
+        $('button').click(e => {
+            const tempo = 500
+              // Ao acionar o evento de clique a div animar irá desaparecer e reaparecer.
+             //$('#animar').hide(tempo).show(tempo)
+            // Se tiver escondido irá aparecer, se já estiver na tela irá desaparecer.
+            $('#animar').toggle(tempo).toggle(tempo)
+            // Desaparecer / aparecer.
+           // $('#animar').fadeOut(tempo).fadeIn(tempo)
+           $('#animar').fadeToggle(tempo).fadeToggle(tempo)
+          //$('#animar').slideUp(tempo).slideDown(tempo)
+           $('#animar').slideToggle(tempo).slideToggle(tempo)
+
+        })
+    </script>
+</body>

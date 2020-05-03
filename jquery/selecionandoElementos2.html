@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Selecionando Elementos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 95px 1fr 55px;
+            grid-template-areas: "cabecalho cabecalho" "menu conteudo" "rodape rodape";
+        }
+
+        header {
+            grid-area: cabecalho;
+            background-color: #fff;
+            color: #000;
+            padding-left: 20px;
+        }
+
+        aside.menu {
+            grid-area: menu;
+        }
+
+        main {
+            grid-area: conteudo;
+            background-color: #dedede;
+            color: #000;
+            padding: 10px;
+        }
+
+        footer {
+            grid-area: rodape;
+            background-color: #fff;
+            color: #000;
+            padding-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Logo</h1>
+    </header>
+    <aside class="menu">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#link1">Link 1</a>
+                </li>
+                <li>
+                    <a href="#link2">Link 2</a>
+                </li>
+                <li>
+                    <a href="#link3">Link 3</a>
+                </li>
+                <li>
+                    <a href="#link4">Link 4</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="conteudo-principal">
+        <h1>Título do Conteúdo</h1>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <span>Dentro do Span</span>
+            </p>
+
+        </section>
+    </main>
+    <footer>
+        <p>Cod3r Ensino</p>
+    </footer>
+    <script>
+        const comBorda = { 'border': 'solid 8px orange' }
+        const semBorda = { 'border': 'none' }
+
+       /**
+       * 1. Selecionar o pai do elemento a, que no caso é li, e aplicar variável comBorda. Por fim, aplicar css semBordar para limpar.
+       * 2. Selecionar o item anterior ao último item da lista. Por fim, retirar borda novamente.
+       * 3. Selecionar o parent de a, ou seja, neste caso o li, e ir para o próximo, isto é, o li posterior
+       * 4. Selecionar todos os parents (no plural) do elemento a, ou seja, li, ul, nav, aside e body.
+       * 5. Selecionar até determinado pai, body (exclusivo) por exemplo, e aplicar o css.
+       * 6. Pegando todos os filho(s) da tag main.
+       * 7. find, para pegar todos os elementos a partir de determinado nó. Ou seja, a partir de body, procurar por todos elementos 'a' e aplicar o css
+       */
+        $('a[href="#link3"]').parent().css(comBorda).css(semBorda)
+        $('li:last').prev().css(comBorda).css(semBorda)
+        $('a[href="#link3"]').parent().next().css(comBorda).css(semBorda)
+
+        $('a[href="#link1"]').parents().css(comBorda).css(semBorda)
+        $('a[href="#link1"]').parentsUntil($('body')).css(comBorda).css(semBorda)
+
+        $('main').children().css(comBorda).css(semBorda)
+
+        $('body').find('a').css(comBorda).css(semBorda)
+
+        /**
+        * 1. Pega o elemento menu utilizando o dom diretamente.
+        * 2. jQuery seleciona a tag menu com base na variável elementoDOM.
+        * 3. Seleciona os filhos da tag main, percorre por eles e aplica o css de acordo com o indíce e o elmento.
+        * 4. Percorrer por cada elemento do tipo li e aplicar css com base no índice (i) e elemento (e)
+        */
+        const elementoDOM = document.getElementsByClassName('menu')
+        $(elementoDOM).css(comBorda)
+
+        $('main').children().each((i, e) => $(e).css(comBorda).css(semBorda))
+        $('li').each((i, e) => {
+            $(e).css(comBorda).css(semBorda)
+        })
+    </script>
+</body>

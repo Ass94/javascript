@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        // Irá esconder os elementos div em 5 segundos e depois vai reaparecer em 5 segundo
+        /**
+        * $('div') -> seleciona todos os elementos div.
+        * .hide(5000) -> esconde as div em 5 segundos.
+        * .show(5000) -> faz com que as div reapareça em 5 segundos.
+        * .fadeOut(5000) -> As irá sumir da tela com uma outra animaçaõ.
+        * Podemos usar jQuery ou simplesmente: $
+        */
+        $('div').hide(5000).show(5000).fadeOut(5000)
+        console.log($('div').get(0)) // Usa Jquery para pegar a div na primeira posição.
+        console.log($.isEmptyObject({})) // Exemplo de função utilitária. Verifica se o objeto passado está vazio.
+        console.log(jQuery.inArray(3, [1, 2, 3])) // Verifica se determinado número está dentro de um Array. 3 está dentro do array? Sim, e retorna a posição do array. no caso [2]
+        
+        /*Alterando a cor de fundo suando jQuery
+        * 1. Cria a função.
+        * 2. seta a variável css.
+        * 3. Seleciona o elemento html que será alterado e chama a função que altera a cor de fundo.
+        */
+
+        $.fn.fundoVerde = function () {
+            this.css('background-color', 'green') // utilizando a função css()
+            return this // retorno o próprio objeto. Com isso conseguiremos encadear a própria chamdada.
+        }
+
+        // Encadeamento nada mais é do que chamar uma função baseada na anterior.
+        // Este encadeamento foi possível pois a função fundoVerde() retorna um objeto. 
+        $('body').fundoVerde().fadeOut(1000)
+    </script>
+</body>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Manipulando CSS</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Manipulando CSS</h1>
+    <div id='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='resultado'></div>
+    <script>
+        const fonte = $('#div1').css('font-family') // Cria uma variável que recebe o valor da família de fonte aplicada na div1.
+        $('#resultado').append(`Fonte é ${fonte}`) // Imprimir dentro da div #resultado a fonte utilizada na #div1
+
+        $('#div1').css('font-size', '3em') // Aplicando estilo a #div1, especificamente o tamanho da fonte.
+        $('#div1').css({ 'font-size':  '3.5em', 'color': 'yellow' }) // Adicionando estilo através de objeto. Alterando tamanho e cor da fonte.
+        $('#div1').css('font-size', function () { // Utilizando callback para alterar o tamanho da fonte. Utilizar apenas em casos de extrema necessidade.
+            return `${2 * 2}em`
+        })
+
+        $('#div2').addClass('destaque') // Adicionar a class css destaque a #div2
+
+        const temClasse = $('#div2').hasClass('destaque') // Verifica se a #div2 contém a classe css destaque
+        $('#resultado').append(`<br>Tem class? ${temClasse}`) // Adiconar resultado na #div resultado.
+
+        $('#div2').removeClass('destaque') // Remover da #div2 a classe css destaque.
+        $('#div2').toggleClass('destaque') // Alternância. Se tiver aplicado a classe destaque, remova-a. Caso contrário, adiciona-a.
+        $('#div2').toggleClass('destaque')
+
+
+    </script>
+</body>
