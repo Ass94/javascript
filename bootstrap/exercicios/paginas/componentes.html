@@ -1,0 +1,292 @@
+<!-- Título (jumbotron) -->
+<!-- Breadcrumb -->
+
+<div class="jumbotron p-4 my-1">
+    <h1 class="display-4">Componentes</h1>
+    <p class="lead m-1">Exemplo de alguns componentes do Bootstrap.</p>
+</div>
+
+<!-- Para delinear o caminho percorrido.
+     breadcrumb: migalha de pão. (mapeando o caminho)
+-->
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Componentes</li>
+    </ol>
+</nav>
+
+<h1>1. Botões -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Botões -->
+
+<div>
+    <div class="mb-3">
+        <button class="btn btn-primary">Salvar</button>
+        <button class="btn btn-secondary">Cancelar</button>
+        <button class="btn btn-outline-success">Finalizar</button>
+        <button class="btn btn-danger" disabled>Excluir</button>
+        <button class="btn btn-warning" data-toggle="button">Selecione</button>
+    </div>
+
+    <div class="btn-group m-3">
+        <button class="btn btn-info">Esquerda</button>
+        <button class="btn btn-info active">Centro</button> <!-- active (deixa o botão destacado) -->
+        <button class="btn btn-info">Direita</button>
+    </div>
+
+    <!--
+        1. btn (Classe de botão específica do bootstrap)
+        2. btn-danger (Define a cor do botão)
+        3. btn-lg (Botão grande)
+        4. dropdown-toggle (Haverá um seta que ao clicar abrirá as opções abaixo: Paypal ou Pagseguro)
+    -->
+    <div class="dropdown">
+        <button class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown">
+            Comprar!
+        </button>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Paypal</a>
+            <a href="#" class="dropdown-item">Pagseguro</a>
+        </div>
+    </div>
+</div>
+
+<h1 class="mt-5">2. Progresso -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Progresso -->
+<!--
+    * progress: Define a barra de progresso *
+    * progress-bar: Define o progresso *
+    * progress-bar-striped: barra de progresso com listras. *
+
+    1. Criar div com a classe progress dando margem-buttom de 4px
+    2. Criar uma div interna com a classe progress-bar.
+    3. Estilizar com a largura de 25% (Darará a impressão de que a barra foi carregada 25%)
+-->
+<div>
+    <div class="progress mb-4">
+        <div class="progress-bar" style="width: 25%;"></div>
+    </div>
+
+    <div class="progress mb-4">
+        <div class="progress-bar progress-bar-striped bg-success" style="width: 50%;">
+            50%
+        </div>
+    </div>
+        <!-- Atalho criação de div com style: .progress-bar[style="width: 15%"]-->
+    <div class="progress" style="height: 40px;">
+        <div class="progress-bar" style="width: 15%;">15%</div>
+        <div class="progress-bar bg-danger" style="width: 30%;">30%</div>
+        <div class="progress-bar bg-info" style="width: 20%;">20%</div>
+        <div class="progress-bar bg-warning" style="width: 25%;">25%</div>
+
+    </div>
+    
+</div>
+
+<h1 class="mt-5">3. Mensagens (Alertas) -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/alerts/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Alertas -->
+
+<div>
+    <div class="alert alert-success">
+        Operação realizada com sucesso!
+    </div>
+    <div class="alert alert-warning">
+       <strong>Cuidado!</strong> Operação geraou impacto no estoque. 
+    </div>
+    <div class="alert alert-danger">
+        <strong>Erro!</strong> Ocorreu um erro inesperado!
+        <a href="#" class="alert-link">Mais detalhes</a>
+    </div>
+    <div class="alert alert-success">
+        <h4 class="alert-heading">Parabéns!</h4>
+        <p>Processo realizado com sucesso!</p>
+        <hr>
+        <p class="mb-0">Pode ficar orgulhoso</p>
+    </div>
+</div>
+
+<h1 class="mt-5">4. Paginação -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Paginação -->
+
+<div>
+    <nav>
+        <ul class="pagination">
+            <li class="page-item">
+                <a href="#" class="page-link">Anterior</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">1</a>
+            </li>
+            <li class="page-item active"> 
+                <a href="#" class="page-link">2</a>
+            </li>
+            <li class="page-item"> 
+                <a href="#" class="page-link">3</a>
+            </li>
+            <li class="page-item"> 
+                <a href="#" class="page-link">4</a>
+            </li>
+            <li class="page-item"> 
+                <a href="#" class="page-link">5</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">Próximo</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<h1 class="mt-5">5. Tooltip -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/tooltip/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Tooltip -->
+
+<!--
+    Comando de atalho para criar tooltip: 
+    button.btn.btn-danger[data-toogle="tooltip" data-placement="top" title="Pense antes!"]
+
+
+-->
+
+<div>
+    <div class="alert alert-warning">
+        Precisa chamar uma função JS!
+        <strong>E agora?</strong>
+    </div>
+    <!-- JS no final da página-->
+    <button class="btn btn-danger" data-toogle="tooltip" 
+        data-placement="top" title="Pense antes!">
+        Excluir
+    </button>
+</div>
+
+<h1 class="mt-5">6. Slider -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/carousel/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Slider -->
+
+<!--
+    Atalho de criação: .carousel.slide[id=slider data-ride=carousel]
+-->
+
+<div>
+    <div class="carousel slide" id="slider" data-ride="carousel">
+        <div class="carousel-inner bg-dark">
+            <div class="carousel-item active">
+               <img src="/imgs/slide1.png" alt="Slide1" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+               <img src="/imgs/slide2.png" alt="Slide2" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+               <img src="/imgs/slide3.png" alt="Slide3" class="d-block mx-auto">
+            </div>
+        </div>
+        <!-- "#slider" é o seletor da div que envolve todas as divs que contém a tag img -->
+        <a href="#slider" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#slider" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+
+<h1 class="mt-5">7. Accordion -
+    <small>
+        <a href="https://getbootstrap.com/docs/4.0/components/collapse/" target="_black">Documentação Oficial</a>
+    </small>
+</h1>
+<hr>
+
+<!-- Accordion -->
+
+<div>
+    <div class="mb-5" id="accordion">
+        <div class="card">
+            <div class="card-header" id="pergunta1">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta1">
+                        Quem é o professor de programação mais legal?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta1" data-parent="#accordion">
+                <div class="card-body">
+                    Posso dizer? :)
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="pergunta2">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta2">
+                        Qual é a capital do Brasil?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta2" data-parent="#accordion">
+                <div class="card-body">
+                    Resposta: Brasília.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="pergunta3">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta3">
+                        Em que ano ocorreu a queda do muro de Berlim?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta3" data-parent="#accordion">
+                <div class="card-body">
+                    Resposta: 1989.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Funciona?
+
+
+    $('[data-toggle="tooltip"]').tooltip()
+</script>

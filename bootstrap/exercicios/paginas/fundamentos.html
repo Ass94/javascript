@@ -1,0 +1,174 @@
+<!-- Título (jumbotron) -->
+<!-- Breadcrumb -->
+
+<!-- 
+    link da documentação: https://getbootstrap.com/docs/4.0/components/jumbotron/
+    jumbotron: (utilizado para os títulos no início das páginas)
+    jumbotron: Classe específica do css. p-4 (padding: 4px). my-1 (margin-y: 1px)
+
+-->
+<div class="jumbotron p-4 my-1">
+    <h1 class="display-4">Fundamentos</h1>
+    <p class="lead m-1">Alguns recursos importantes do Bootstrap.</p>
+</div>
+
+<!-- Para delinear o caminho percorrido.
+     breadcrumb: migalha de pão. (mapeando o caminho)
+-->
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Fundamentos</li>
+    </ol>
+</nav>
+
+<div class="exercicio">
+    <h1>1. Tipografia -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/content/typography/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <ul>
+        <li><strong>Reboot</strong> - Torna consistente o estilo entre diferentes browser!</li>
+        <li><strong>Rems</strong> - Baseado no raiz</li>
+        <li>Evita <strong>margin-top</strong> - Provavelmente será necessário adicionar algum espaço</li>
+        <li><strong>box-sizing</strong> border-box</li>
+        <li>Fontes nativas</li>
+    </ul>
+
+    <h1 class="mt-5">2. Espaços -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/spacing/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Espaços -->
+    <!--
+        m -> margin.
+            b -> buttom.
+            t -> top.
+            l -> left.
+            r -> right.
+        
+        p -> padding.
+            x -> eixo x (Horizontal).
+            y -> eixo y (Vertical).
+            b -> buttom.
+            t -> top.
+            l -> left.
+            r -> right.
+        
+        Tamanho permitido pelo bootstrap: 1px a 5px. (0 retira).
+    -->
+    <div class="mb-5">1</div> <!-- mb-5 (margin-buttom 5px-->
+    <div class="m-4 py-4">2</div> <!-- m-4 (margin: 4px) py-4 (padding: 4px) no eixo y (vertical) -->
+    <div class="pt-5">3</div> <!-- pt-5 (padding-top: 5px) -->
+
+    <h1 class="mt-5">3. Cores -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/colors/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Cores -->
+    <!-- 
+        1. Criação da div (.my-1.p-3.bg-primary.text-light)
+        2. my-1 (Margin vertical 1)
+        3. p-3 (padding 3)
+        4. bg-primary (background-primary). primary -> cor padrão utilizada para o azul.
+        5. text-light (Um texto claro. Quase branco.)
+        6. bg-danger (cor padrão para o vermelho)
+
+    -->
+    <div class="my-1 p-3 bg-primary text-light">1</div>
+    <div class="my-1 p-3 bg-danger text-white">2</div>
+    <div class="m-1 p-3 bg-warning text-success">3</div>
+
+    <h1 class="mt-5">4. Flex -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/flex/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Flex -->
+    <!-- 
+        1. Criando div utilizando atalho: (.d-flex.flex-column-reverse.p-2)
+        2. d-flex: Habilitando display flex.
+        3. flex-column-reverse: flex-derection: column. Organizado em coluna. O conteúdo será organizado de forma reversa.
+        4. p-2: padding: 2 (espaçamento 2)
+
+    -->
+    <div class="d-flex flex-column-reverse p-2">
+        <!-- Lembrando que está sendo usado reverse-->
+        <div class="align-self-end">1</div> <!-- final da coluna -->
+        <div class="align-self-center">2</div> <!-- meio da coluna -->
+        <div class="align-self-start">3</div> <!-- início da coluna -->
+    </div>
+    <h1 class="mt-5">5. Imagens -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/content/images/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Imagens -->
+    <!-- 
+        1. Atalho de criação: img.mx-auto.d-block[src="/imgs/img1.png" width="400"]
+        2. img (tag).
+        3. mx-auto (margem no eixo y será ajustada de forma automática).
+        4. d-block (display-block).
+        5. mx-auto e d-block fará que a imagem fique centralizada no viwport.
+
+        6. img-thumbnail (Estilização na imagem). Será aplicado um retrato bem discreto na imagem. Além disso, é responsiva.
+
+        7. img-fluid (Imagem ficará responsiva. Se ajustará de acordo com o tamanho do viewport)
+        8. rounded-circle (Imagem circular).
+    -->
+    <div class="p-2">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="mx-auto d-block" width="400">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-thumbnail" width="400">
+        <img src="/imgs/img1.png" alt="Imagem 1" class="img-fluid rounded-circle" width="400">
+    </div>
+
+    <h1 class="mt-5">6. Float -
+        <small>
+            <a href="https://getbootstrap.com/docs/4.0/utilities/float/" target="_black">Documentação Oficial</a>
+        </small>
+    </h1>
+    <hr>
+
+    <!-- Float -->
+    <!--
+        * display flex é mais recomendado do que utilizar float *
+        1. Atalho de criação: .my-1.p-3.float-left
+        2. float-left: alinha à esquerda.
+        3. float-rigth alinhada à direita.
+        4. float-lg-right: de acordo com o tamanho do view port. Só irá fazer o float caso a tela seja large (grande) x-large (muito grande)
+        Responsividade:
+        lg -> grande
+        sm -> pequena
+        md -> méido
+        xl -> extra grande.
+
+    -->
+
+    <div class="my-1 p-3 float-left">1</div>
+    <div class="my-1 p-3 float-right">2</div>
+    <div class="my-1 p-3 float-lg-right float-xl-left">3</div>
+
+
+</div>
+
+<style>
+    .exercicio div {
+        border: solid 8px #000;
+        font-size: 2rem;
+    }
+</style>

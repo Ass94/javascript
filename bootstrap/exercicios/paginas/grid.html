@@ -1,0 +1,161 @@
+<!-- Título (jumbotron) -->
+<!-- Breadcrumb -->
+
+<div class="jumbotron p-4 my-1">
+    <h1 class="display-4">Sistema de Grid</h1>
+    <p class="lead m-1">Revolução da Responsividade: Containers, Linhas e 12 Colunas.</p>
+</div>
+
+<!-- Para delinear o caminho percorrido.
+     breadcrumb: migalha de pão. (mapeando o caminho)
+-->
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Grid</li>
+    </ol>
+</nav>
+
+<p class="lead">
+    <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_black">Documentação Oficial</a>
+</p>
+
+<div class="exercicio">
+    <h1>1. Grid Básica</h1>
+    <hr>
+
+    <!-- Grid Básica -->
+
+    <!-- 
+        **container, linhas e 12 colunas**
+        * container -> classe especifica do bootstrap *
+        1. container: Ocupará uma área fixa (central).
+        2. container-fluid: acompanhará o tamanho do viewport. Cresce e diminui de acordo com o tamanho da tela
+        3. row: inserindo uma linha: <div class="row"></div>
+        4. col: para dispositivos extra-pequenos. (consultar tamanhos do col na documentação.)
+    -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col bg-primary">1</div>
+            <div class="col bg-danger">2</div>
+            <div class="col bg-warning">3</div>
+            <div class="col bg-info">4</div>
+            <div class="col bg-secondary">5</div>
+        </div>
+        <!-- Podemos informar que utilizaremos mais espaço em uma coluna ou não-->
+        <div class="row mt-3">
+            <div class="col bg-danger">1</div> <!-- Ocupa uma coluna e meia -->
+            <div class="col-4 bg-warning">2</div> <!-- Ocupa 4 colunas-->
+            <div class="col-5 bg-info">3</div> <!-- Ocupa 5 colunas-->
+            <div class="col bg-primary">4</div> <!-- Ocupa uma coluna e meia -->
+
+        </div>
+    </div>
+
+    <h1 class="mt-5">2. Grid Responsiva</h1>
+    <hr>
+
+    <!-- Grid Responsiva -->
+
+    <!--
+        1. col-12 (12 colunas)
+        2. col-sm-6 (para dispositivo pequeno, 6 colunas à esquerda e 6 colunas à direita)
+        3. col-md-4 (para dispositivo méido, oculpar 4 colunas)
+        4. col-lg-2 (para dispositivo grande, oculpar 2 colunas)
+        5. col-xl-1 (para dispositivo muito grande, oculpar 1 coluna cada)
+
+    -->
+
+    <div class="container-fluid">
+        <div class="row">
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">1</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">2</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">3</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">4</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">5</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">6</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-danger">7</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-info">8</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-success">9</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-secondary">10</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-warning">11</div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 bg-primary">12</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">3. Quebra de Linha</h1>
+    <hr>
+
+    <!-- Quebra de Linha -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 bg-primary">1</div>
+            <div class="col-3 bg-danger">2</div>
+            <div class="w-100"></div> <!-- Quebra de linha. Força para que o próximo elemento vá para próxima linha -->
+            <div class="col-3 bg-warning">3</div> <!-- Estará na linha seguinte -->
+        </div>
+    </div>
+
+    <h1 class="mt-5">4. Ordem</h1>
+    <hr>
+
+    <!-- Ordem -->
+
+    <!--
+        * Ordena os elementos de acordo com o atributo order*
+        * Ficará ordenado da seguinte forma: *
+        1  5  12 (div3 - div1 - div 2)
+    -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 order-5 bg-primary">1</div>
+            <div class="col-4 order-12 bg-danger">2</div>
+            <div class="col-4 order-1 bg-warning">3</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">5. Offset</h1>
+    <hr>
+
+    <!-- Offset -->
+    <!-- Deslocamento 
+        *Semelhante ao margin-left*
+        1. offset-7 (desloca 7)
+        2. offset-3 (desloca 3)
+        3. offset-1 (desloca 1)
+    -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 offset-7 bg-primary">1</div>
+            <div class="col-4 offset-3 bg-danger">2</div>
+            <div class="col-6 offset-1 bg-warning">3</div>
+        </div>
+    </div>
+
+    <h1 class="mt-5">6. Alinhamento</h1>
+    <hr>
+
+    <!-- Alinhamento -->
+
+    <div class="container-fluid">
+        <div class="row h-300">
+            <div class="col-4 align-self-end bg-primary">1</div> <!-- Alinha no final -->
+            <div class="col-4 align-self-center bg-danger">2</div> <!-- Alinha no centro -->
+            <div class="col-4 align-self-start bg-warning">3</div> <!-- Alinha no início -->
+        </div>
+    </div>
+</div>
+
+<style>
+    .exercicio div {
+        font-size: 1.5em;
+    }
+
+    .h-300 {
+        height: 300px;
+    }
+</style>

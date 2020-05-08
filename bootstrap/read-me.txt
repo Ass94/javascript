@@ -1,0 +1,37 @@
+1. Instalar jQuery: npm i --save-dev jquery@3.3.1 -E
+
+2. Instalar Popper: npm i --save-dev popper.js@1.14.3 -E 
+
+3. Instalar todas dependências do package.json: npm i
+
+4. Iniciar o servidor: C:\Softwares\Java Script\Projetos\exercicios-web\bootstrap\exercicios>npm start
+
+5. Alterar href para wm-link. Esse atributo está sendo especificado da seguinte forma no arquivo navegacao.js :
+ const link = document.querySelector(`[wm-link='${hash}']`)
+        if(!link) return
+
+6. Construindo páginas html utilizando atalhos:
+
+(header.cabecalho>h1+(aside>nav>ul>li))
+
+Ou seja: 
+1. criar uma tag header com a classe cabecalho.
+2. Dentro da tag header havera uma tag h1.
+3. Posteriormente a tag h1, criar a tag aside.
+4. Dentro de aside terá a tag nav que terá a tag ul que por sua vez terá a tag li.
+Resultado:
+<header class="cabecalho">
+        <h1></h1>
+        <aside>
+            <nav>
+                <ul>
+                    <li></li>
+                </ul>
+            </nav>
+        </aside>
+</header>
+
+Criando div com a classe:
+.mb-5
+Resultado:
+<div class="mb-5"></div>
