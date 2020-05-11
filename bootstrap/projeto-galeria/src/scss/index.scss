@@ -1,0 +1,8 @@
+@import "~bootstrap/scss/bootstrap"; // Procurar dentro de node_modules (~). Importando o bootstrap completo.
+
+// Sobrescrevendo uma variável do sass
+$fa-font-path: "~font-awesome/fonts"; // Onde será encontrado as fontes
+@import "~font-awesome/scss/font-awesome";
+
+@import "custom"; // Importanto os estilos criados por mim.
+

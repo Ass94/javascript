@@ -35,3 +35,21 @@ Criando div com a classe:
 .mb-5
 Resultado:
 <div class="mb-5"></div>
+
+* Projeto galeria dentro da pasta bootstrap *
+
+1. Instalar dependência do package.json: C:\Softwares\Java Script\Projetos\exercicios-web\bootstrap\projeto-galeria>npm i
+
+2. Repositório do github: https://github.com/cod3rcursos/web-moderno 
+
+3. Projeto baseado no seguinte template (doc bootstrap): https://getbootstrap.com/docs/4.4/examples/album/
+
+*Uma opção para criar páginas de modo rápido*
+4. Ir até o navegador onde está onde está o exemplo que vamos seguir (link acima).
+    a. Clicar em inspecionar.
+    b. ocultar o conteúdo da tag header.
+    c. copiar e colar no arquivo header.html
+
+
+5. Iniciar o servidor: npm start 
+    Esse cara no package.json:  "start": "webpack-dev-server",
