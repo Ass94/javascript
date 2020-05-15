@@ -1,0 +1,32 @@
+** O React utiliza o webpack para fazer o build do projeto. **
+
+1. Criar pasta react.
+2. No diretório: C:\Softwares\Java Script\Projetos\exercicios-web\react>
+3. Executar o comando: npm i -g create-react-app
+
+4. criar projeto: create-react-app exercicios
+
+5. Entrar no projeto exercicios: cd C:\Softwares\Java Script\Projetos\exercicios-web\react\exercicios
+6. Executar o comando: npm start (A aplicação será iniciada. server na porta 3000)
+
+7. Apagar todos os arquivos que estão dentro da pasta src. 
+
+8. Dentro da pasta src, criar o arquivo index.js
+
+9. Dentro do arquivo index.js, inserir o código:
+
+    / O id root está na página index.html dentro da pasta public que contém os arquivos minificados
+    // JSX 
+    // Será feito a conversão de elemento para html. A princípio a variável elemento armazena um código JavaScript
+    const elemento = <h1>React</h1>
+    ReactDOM.render(elemento, document.getElementById('root'))
+
+10. Exemplo 2
+
+    import Primeiro from './componentes/Primeiro'
+
+    // Componente personalizado deverá ter letra maiúscula. (Primeiro)
+    ReactDOM.render(<Primeiro/>, document.getElementById('root'))
+
+11. Atalho para comentar em jsx:
+    control + u
