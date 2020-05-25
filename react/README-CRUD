@@ -1,16 +1,17 @@
 1. Diretório: C:\Softwares\Java Script\Projetos\exercicios-web\react\crud\backend>
 2. Executar comando: npm init -y (Cria o package.json)
 3. Instalar depenência: npm i --save json-server@0.13.0 -E (node_modules) e (package-lock.json)
-4. C:\Softwares\Java Script\Projetos\exercicios-web\react\crud\backend>npm start
-5. C:\Softwares\Java Script\Projetos\exercicios-web\react\crud> create-react-app frontend
-6. (frontend) - package.json:
+4. Inserir o script no package.json: "start": "json-server --watch db.json --port 3001"
+5. C:\Softwares\Java Script\Projetos\exercicios-web\react\crud\backend>npm start
+6. C:\Softwares\Java Script\Projetos\exercicios-web\react\crud> create-react-app frontend
+7. (frontend) - package.json:
     "axios": "0.18.0", (cliente http)
     "bootstrap": "4.1.1", (Estilização)
     "font-awesome": "4.7.0",  (Fontes)
     "react-router": "4.2.0", (Para navegar entre os componentes)
     "react-router-dom": "4.2.2",
-7. Instalar as depenências:
+8. Instalar as depenências:
     C:\Softwares\Java Script\Projetos\exercicios-web\react\crud\frontend> npm i
 
-8. Em frontend >> public >> index.html, inserir o link:
+9. Em frontend >> public >> index.html, inserir o link:
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
