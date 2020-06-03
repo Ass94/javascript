@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Caneta BIC Preta",
+      "price": 5.89
+    },
+    {
+      "id": 2,
+      "name": "Notebook Mac Pro",
+      "price": 12000.89
+    },
+    {
+      "id": 3,
+      "name": "Samsung S20+",
+      "price": 6000
+    },
+    {
+      "name": "Boné Reserva",
+      "price": "49.99",
+      "id": 5
+    },
+    {
+      "name": "Lápis",
+      "price": "12.50",
+      "id": 6
+    },
+    {
+      "name": "Mouse",
+      "price": "30.99",
+      "id": 7
+    }
+  ]
+}
