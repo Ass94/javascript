@@ -1,0 +1,13 @@
+id: "5edc9d8d065c34e7cdfc20af"
+
+id Sorocaba: "5edc9d8d065c34e7cdfc20ae"
+
+db.empresas.insert({
+    nome: "Bradesco",
+    estadoId: ObjectId("5edc9d8d065c34e7cdfc20af")
+})
+
+db.empresas.insert({
+    nome: "Vale",
+    cidadeId: ObjectId("5edc9d8d065c34e7cdfc20ae")
+})

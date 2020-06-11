@@ -1,0 +1,131 @@
+*** Banco de dados Case Sensitive ***
+
+1. Listar os comandos: help
+
+2. Verificar tudo o que temos à disposição: db. + tab duas vezes
+
+3. Listar banco de dados: show dbs
+
+4. Utilizar banco de dados: use wm
+
+5. Criar collection: db.createCollection('estados')
+
+6. Listar collections: show collections
+
+7. Excluir collection: db.Estados.drop()
+
+### INSERIR DADOS ###
+
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})
+
+*save serve tanto para inserir quanto para atualizar*
+
+db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste", populacao: 3322000})
+
+db.estados.insert({
+    nome: "Rio de Janeiro",
+    sigla: "RJ",
+    regiao: "Sudeste",
+    cidades: [{
+        _id: ObjectId(),
+        nome: "Niterói",
+        area: 133.9,
+        populacao: 487562
+    }]
+})
+
+
+db.estados.insert({
+    nome: "São Paulo",
+    sigla: "SP",
+    regiao: "Sudeste",
+    cidades: [
+        {
+        _id: ObjectId(), 
+        nome: "Campinas", 
+        area: 795.7, 
+        prefeito: "Jonas Donizette", 
+        populacao: 1081000
+        },
+        {
+        _id: ObjectId(),
+        nome: "Guarulhos", 
+        populacao: 1325000
+        },
+        {
+        _id: ObjectId(), 
+        nome: "Sorocaba", 
+        distanciaCapital: 87, 
+        populacao: 644919
+        }
+    ]
+})
+
+## LISTAR / CONSULTAR REGISTROS ##
+
+1. db.estados.find()
+
+*listar no formato Json
+2. db.estados.find().pretty() 
+
+*listar o primeiro
+3. db.estados.findOne()
+
+4. db.estados.findOne({sigla: "RJ"}).pretty()
+
+*usando ou (or)
+5. db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+
+*consultar todos estados que tem populacao
+6. db.estados.find({populacao: {$exists: true}}).pretty()
+
+*consultas páginadas
+7. db.estados.find().skip(1)
+
+# limit() limita o retulsado.
+7.1 db.estados.find().skip(1).limit(2).pretty()
+
+*consultar qtde de registros
+8. db.estados.count()
+
+*especificando o que deverá retornar
+9. db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0}).pretty()
+
+9.1 db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0}).pretty()
+
+## ATUALIZAR / UPDATE
+
+1. primeiro o filtro, depois a parte que queremos atualizar.
+
+*o estado de SP também terá o atributo populacao.
+db.estados.update({sigla: "SP"}, {$set: {populacao: 45340000}})
+
+db.estados.update({sigla: "AL"}, {$set: {cidades: [{nome: "Sergipe"}]}})
+
+*como SP já possui o atributo cidades, precisamos utilizar $push para não substituir as existentes.
+db.estados.update(
+    {sigla: "SP"},
+    {$push: {cidades: {nome: "Santos", populacao: 433966}}}
+)
+
+db.estados.update(
+    {sigla: "RJ"},
+    {$set: {populacao: 16720000}}
+)
+
+## REMOVER / REMOVE
+
+db.estados.remove({sigla: "AC"})
+
+* excluir estado que possui população. 1 -> apenas um estado.
+
+db.estados.remove({populacao: {$exists: true}}, 1)
+
+*$lt (last then) -> critério de exclusão.
+db.estados.remove(
+    {populacao: {$lt: 20000000}}
+)
+
+
+
+16.720.000

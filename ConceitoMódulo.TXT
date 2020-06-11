@@ -1,0 +1,6 @@
+Módulo nada mais do que um arquivo. 
+
+Para que esse módoulo possa ser utilizado por outros módulos (arquivos)
+é necessário exportar esse arquivo, em outras palavras, torná-lo público.
+
+modules.export

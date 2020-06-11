@@ -1,0 +1,34 @@
+* estadoId -> pertence a collection empresas
+* foreignField: "_id" pertence a collection estados
+* as estado -> atributo que será criado entre o relacionamento.
+1. $match - Pegar nome da empresa.
+2. $lookup - Dentro da collection estados (from estados)
+3. localField e foreignField - Fazem o relacionamento.
+4. as estado - Alias (apelido)
+
+## lookup utilizando estados.
+db.empresas.aggregate([
+    {$match: {nome: "Bradesco"}},
+    {$lookup: {
+        from: "estados",
+        localField: "estadoId",
+        foreignField: "_id",
+        as: "estado"
+    }},
+    {$unwind: "$estado"},
+]).pretty()
+
+## lookup utilizando cidades
+db.empresas.aggregate([
+    {$match: {nome: "Vale"}},
+    {$lookup: {
+        from: "estados",
+        localField: "cidadeId",
+        foreignField: "cidades._id",
+        as: "estado"
+    }},
+    {$unwind: "$estado"},
+    {$unwind: "$estado.cidades"},
+    {$addFields: { mesmaCidade: {$cmp: ["estado.cidades._id", "cidadeId"]} } },
+    {$match: { mesmaCidade: 1}}
+]).pretty()

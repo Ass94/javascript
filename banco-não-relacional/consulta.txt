@@ -1,0 +1,37 @@
+# Todos os estados e os nomes das cidades.
+# Um estágio pipeline de agregação.
+
+db.estados.aggregate([
+    { $project: {
+        nome: 1, 
+        "cidades.nome": 1, 
+        _id: 0 
+        } 
+    } 
+]).pretty()
+
+# Sempre que o atributo estiver do lado direito ($cidades.populacao)
+# Utilizar $ para o mongo entender que precisa interpolar o valor.
+
+db.estados.aggregate ([
+    { $project: {
+        populacao: 
+            {$sum: "$cidades.populacao"},
+            sigla: 1,
+            _id: 0
+        }
+    },
+    {
+        $group: {
+            _id: null, 
+            populacaoTotal: {$sum: "$populacao" }
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            populacaoTotal: 1
+        }
+    }
+])
+
