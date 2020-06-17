@@ -50,3 +50,19 @@
 28. em routes.js, atualizar rotas /users/:id. função getById()
 30. na pasta api, criar módulo category.js e desenvolver todas funcionalidades
 31. atualizar rotas (routes.js)
+32. em category.js, criar sistemática que organizará o menu em árvores. (toTree())
+33. atualizar rotas (routes.js). As rotas mais específicas devem ser declaradas antes.
+34. consultas recursivas: https://www.postgresql.org/docs/10/
+35. criar arquivo queries.js (nesse arquivo contém algumas consultas específicas)
+36. em articles.js, criar função que pegará os ids da categoria. Importar o módulo queries.js
+37. Atalho do VSC: CRTL + B (espandir a tela)
+38. criar arquivo .env (configuração do token de autenticação)
+39. no .gitignore, configurar para que o arquivo .env não seja enviado para o github.
+40. criar módulo auth.js (responsável pela autenticação) 
+41. data atual: Date.now(). Ou seja, data em milissegundos.
+42. Math.floor(Date.now() / 1000). Agora o resultado será em segundos.
+43. iat: sigla para descrever emitido em (issed at).
+44. o token expira em: exp: now + (60 * 60 * 24 * 3). Ou seja, três dias. 60 segundos * 60 minutos * 24 horas * 3 dias.
+45. payload (auth.js): verifica se o usuário está logado.
+46. atualizar rotas (route.js)
+

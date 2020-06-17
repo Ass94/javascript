@@ -40,3 +40,12 @@ CREATE DATABASE knowledge_final;
 c\ knowledge_final
 
 \dt
+
+### CONSULTAS ###
+
+SELECT * FROM categories
+WHERE id in (1,2,3)
+
+
+SELECT * FROM articles
+WHERE "categoryId" in (4,5,6,7,8)

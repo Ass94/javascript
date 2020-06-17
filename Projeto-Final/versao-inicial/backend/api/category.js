@@ -43,7 +43,7 @@ module.exports = app => {
             existsOrError(rowsDeleted, 'Categoria não foi encontrada.')
 
             res.status(204).send()
-        } catch(msg) {
+        } catch (msg) {
             res.status(400).send(msg)
         }
     }
@@ -58,7 +58,7 @@ module.exports = app => {
             let path = category.name
             let parent = getParent(categories, category.parentId)
 
-            while(parent) {
+            while (parent) {
                 path = `${parent.name} > ${path}`
                 parent = getParent(categories, parent.parentId)
             }
@@ -67,8 +67,8 @@ module.exports = app => {
         })
 
         categoriesWithPath.sort((a, b) => {
-            if(a.path < b.path) return -1
-            if(a.path > b.path) return 1
+            if (a.path < b.path) return -1
+            if (a.path > b.path) return 1
             return 0
         })
 
@@ -77,8 +77,8 @@ module.exports = app => {
 
     const get = (req, res) => {
         app.db('categories')
-        .then(categories => res.json(withPath(categories)))
-        .catch(err => res.status(500).send(err))
+            .then(categories => res.json(withPath(categories)))
+            .catch(err => res.status(500).send(err))
     }
 
     const getById = (req, res) => {
@@ -89,5 +89,21 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
-    return { save, remove, get, getById }
+    const toTree = (categories, tree) => {
+        if (!tree) tree = categories.filter(c => !c.parentId)
+        tree = tree.map(parentNode => {
+            const isChild = node => node.parentId == parentNode.id
+            parentNode.children = toTree(categories, categories.filter(isChild))
+            return parentNode
+        })
+        return tree
+    }
+
+    const getTree = (req, res) => {
+        app.db('categories')
+            .then(categories => res.json(toTree(categories)))
+            .catch(err => res.status(500).send(err))
+    }
+
+    return { save, remove, get, getById, getTree }
 }
