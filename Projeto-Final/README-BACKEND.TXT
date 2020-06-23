@@ -65,4 +65,22 @@
 44. o token expira em: exp: now + (60 * 60 * 24 * 3). Ou seja, três dias. 60 segundos * 60 minutos * 24 horas * 3 dias.
 45. payload (auth.js): verifica se o usuário está logado.
 46. atualizar rotas (route.js)
-
+47. em config, criar passport.js (jwt). Mais informações: https://jwt.io/
+48. Os tokens devem ser pegos após realizar um post em: http://localhost:3000/signin
+    token usuário comum (isabela@negocio.com.br): eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklzYWJlbGEgU29hbiIsImVtYWlsIjoiaXNhYmVsYUBuZWdvY2lvLmNvbS5iciIsImFkbWluIjpmYWxzZSwiaWF0IjoxNTkyNDY4Njc3LCJleHAiOjE1OTI3Mjc4Nzd9.KYCYMAXlBJ-Kiwne1eLbUnA3hj8SoMJsH2rCrCmUhPg
+    token admin (alex@negocio.com.br): eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkFsZXggZGUgU291emEiLCJlbWFpbCI6ImFsZXhAbmVnb2Npby5jb20uYnIiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTkyNDY4ODA1LCJleHAiOjE1OTI3MjgwMDV9.O_fE3w3mzwfs92LudTQU2j8Kn72vJqrsa7_ZA9ktpp8
+    Dessa forma, para acessar as URLs, o token deverá ser inserido em: Auth > Bearer > Token: eyJ0eXAiOiJKV1QiLCJ........
+49. em config, criar módulo mongodb.js. informações sobre o mongoose: https://mongoosejs.com/
+50. console.log('\x1b[41m%s\x1b[37m', msg, '\x1b[0m'): altera cor de fundo e exibi msg caso ocorra erro de conexão com o banco de dados.
+51. criar pasta schedule.
+52. na pasta schedule, criar arquivo statusSchedule.js
+    configuração do cron: ('*/1****') atualização de 1 em 1 segundo.
+    node-schedule (doc): https://www.npmjs.com/package/node-schedule
+53. criar nova migration: knex migrate:make add_deleted_at_table_users
+54. configurar nova migration.
+55. executar migration: knex migrate:latest
+56. em .env, inserir a parte de conexão com o banco de dados. (Isso trará mais segurança à aplicação)
+57. Atualizar o arquivo env_file.
+58. Atualizar knexfile.js (connection: db)
+59. em users.js, inserir condições na função save para não permitir que o usuário seja cadastrado como admin por qualquer usuário.
+60. fim backend.
